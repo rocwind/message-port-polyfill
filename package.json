@@ -1,0 +1,42 @@
+{
+  "name": "message-port-polyfill",
+  "version": "0.0.1",
+  "description": "simple polyfill to MessageChannel and MessagePort API",
+  "main": "lib/bundle.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "clean": "del-cli lib",
+    "build": "npm run clean && npm run compile && rollup lib/index.js --file lib/bundle.js --format umd --name 'MessagePortPolyfill'",
+    "compile": "tsc --outDir lib -d",
+    "preversion": "npm test && npm run build",
+    "postversion": "git push origin master && git push origin --tags && npm publish",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocwind/message-port-polyfill.git"
+  },
+  "keywords": [
+    "polyfill",
+    "MessagePort",
+    "MessageChannel"
+  ],
+  "author": "Roc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rocwind/message-port-polyfill/issues"
+  },
+  "homepage": "https://github.com/rocwind/message-port-polyfill#readme",
+  "devDependencies": {
+    "@types/jest": "24.0.5",
+    "del-cli": "1.1.0",
+    "jest": "24.1.0",
+    "rollup": "1.1.2",
+    "ts-jest": "23.10.5",
+    "typescript": "3.3.3"
+  }
+}
