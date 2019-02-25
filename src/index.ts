@@ -75,7 +75,11 @@ const globalObj =
     typeof self !== 'undefined' && (<any>self).Math === Math ? self :
     Function('return this')();
 
-if (!globalObj.MessagePort || !globalObj.MessageChannel) {
+export function applyPolyfill() {
     globalObj.MessagePort = MessagePortPolyfill;
     globalObj.MessageChannel = MessageChannelPolyfill;
+}
+
+if (!globalObj.MessagePort || !globalObj.MessageChannel) {
+    applyPolyfill();
 }
