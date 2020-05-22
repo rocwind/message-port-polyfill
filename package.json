@@ -34,7 +34,7 @@
   "devDependencies": {
     "@types/jest": "25.2.3",
     "del-cli": "3.0.1",
-    "jest": "25.2.4",
+    "jest": "26.0.1",
     "rollup": "2.10.7",
     "ts-jest": "26.0.0",
     "typescript": "3.9.3"
