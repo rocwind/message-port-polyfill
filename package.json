@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/rocwind/message-port-polyfill#readme",
   "devDependencies": {
-    "@types/jest": "26.0.7",
+    "@types/jest": "26.0.8",
     "del-cli": "3.0.1",
     "jest": "26.2.1",
     "rollup": "2.23.0",
